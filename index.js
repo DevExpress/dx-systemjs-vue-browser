@@ -100,7 +100,7 @@
       return [];
     }
 
-    const dxComponents = Object.keys(imports).filter((cmp) => cmp.startsWith('Dx'));
+    const dxComponents = Object.keys(imports).filter((cmp) => (cmp.startsWith('Dx') && !imports[cmp].isType));
     const appComponents = Object.keys(imports).filter((key) => imports[key].source.endsWith('.vue'));
     return [...dxComponents, ...appComponents];
   }
